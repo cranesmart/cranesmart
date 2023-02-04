@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+
+  <base href="/" />
+
+    <title>Active eCommerce | Demo of Active eCommerce CMS</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Demo of Active eCommerce CMS" />
+    <meta name="keywords" content="">
+
+    <!-- Favicon -->
+    <link rel="icon" href="public/uploads/all/4xnLnzEeu3dFKDGSBMlvLXPLGXFdHEkvqBSZREmO.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./assets/css/vendors.css">
+    <link rel="stylesheet" href="./assets/css/aiz-core.css">
+    <link rel="stylesheet" href="./assets/css/custom-style.css">
+
+
+    <!-- Start WOWSlider.com HEAD section -->
+    <link rel="stylesheet" type="text/css" href="slider_data/engine1/style.css" />
+    <script type="text/javascript" src="slider_data/engine1/jquery.js"></script>
+    <!-- End WOWSlider.com HEAD section -->
+
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        :root {
+            --primary: #e62e04;
+            --hov-primary: #e62e04;
+            --soft-primary: rgba(230, 46, 4, 0.15);
+        }
+
+        #map {
+            width: 100%;
+            height: 250px;
+        }
+
+        #edit_map {
+            width: 100%;
+            height: 250px;
+        }
+
+        .pac-container {
+            z-index: 100000;
+        }
+        .dropdown-menu
+        {
+            z-index:1021 !important;
+        }
+    </style>
+
+
+    <!-- crousl mine -->
+    <style>
+        .cards-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .card {
+            margin: 0 0.5em;
+            box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+            border: none;
+            border-radius: 0;
+            overflow: hidden;
+        }
+
+        .carousel-inner {
+            padding: 1em;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            background-color: #e1e1e1;
+            width: 5vh;
+            height: 5vh;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @media (min-width: 768px) {
+            .card img {
+                height: 11em;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+  <app-root></app-root>
+  <app-header></app-header>
+</body>
+
+</html>
+<!-- SCRIPTS -->
+<script src="./assets/js/vendors.js"></script>
+<script src="./assets/js/aiz-core.js"></script>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+function confirm_modal(delete_url) {
+    jQuery('#confirm-delete').modal('show', {
+        backdrop: 'static'
+    });
+    document.getElementById('delete_link').setAttribute('href', delete_url);
+}
+</script>
+
+<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+            </div>
+
+            <div class="modal-body">
+                <p>Delete confirmation message</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a id="delete_link" class="btn btn-danger btn-ok">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function account_delete_confirm_modal(delete_url) {
+    jQuery('#account_delete_confirm').modal('show', {
+        backdrop: 'static'
+    });
+    document.getElementById('account_delete_link').setAttribute('href', delete_url);
+}
+</script>
+
+<div class="modal fade" id="account_delete_confirm" tabindex="-1" role="dialog"
+    aria-labelledby="account_delete_confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header d-block py-4">
+                <div class="d-flex justify-content-center">
+                    <span class="avatar avatar-md mb-2 mt-2">
+                        <img src="https://demo.activeitzone.com/ecommerce/public/assets/img/avatar-place.png"
+                            class="image rounded-circle m-auto"
+                            onerror="this.onerror=null;this.src='https://demo.activeitzone.com/ecommerce/public/assets/img/avatar-place.png';">
+                    </span>
+                </div>
+                <h4 class="modal-title text-center fw-700" id="account_delete_confirmModalLabel"
+                    style="color: #ff9819;">Delete Your Account</h4>
+                <p class="fs-16 fw-600 text-center" style="color: #8d8d8d;">Warning: You cannot undo this action</p>
+            </div>
+
+            <div class="modal-body pt-3 pb-5 px-xl-5">
+                <p class="text-danger mt-3"><i><strong>Note:&nbsp;Don&#039;t Click to any button or don&#039;t do
+                            any action during account Deletion, it may takes some times.</strong></i></p>
+                <p class="fs-14 fw-700" style="color: #8d8d8d;">Deleting Account Means:</p>
+                <div class="row bg-soft-warning py-2 mb-2 ml-0 mr-0 border-left border-width-2 border-danger">
+                    <div class="col-1">
+                        <img src="https://demo.activeitzone.com/ecommerce/public/assets/img/warning.png" class="h-20px">
+                    </div>
+                    <div class="col">
+                        <p class="fw-600 mb-0">If you create any classified ptoducts, after deleting your account,
+                            those products will no longer in our system</p>
+                    </div>
+                </div>
+                <div class="row bg-soft-warning py-3 ml-0 mr-0 border-left border-width-2 border-danger">
+                    <div class="col-1">
+                        <img src="https://demo.activeitzone.com/ecommerce/public/assets/img/warning.png" class="h-20px">
+                    </div>
+                    <div class="col">
+                        <p class="fw-600 mb-0">After deleting your account, wallet balance no longer in our system
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a id="account_delete_link" class="btn btn-danger btn-rounded btn-ok">Delete Account</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addToCart">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-zoom product-modal" id="modal-size"
+        role="document">
+        <div class="modal-content position-relative">
+            <div class="c-preloader text-center p-3">
+                <i class="las la-spinner la-spin la-3x"></i>
+            </div>
+            <button type="button" class="close absolute-top-right btn-icon close z-1" data-dismiss="modal"
+                aria-label="Close">
+                <span aria-hidden="true" class="la-2x">&times;</span>
+            </button>
+            <div id="addToCart-modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+window.fbAsyncInit = function() {
+    FB.init({
+        xfbml: true,
+        version: 'v3.3'
+    });
+};
+
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<div id="fb-root"></div>
+<!-- Your customer chat code -->
+<div class="fb-customerchat" attribution=setup_tool page_id="">
+</div>
+
+<script>
+</script>
+
+<script>
+$(document).ready(function() {
+    $('.category-nav-element').each(function(i, el) {
+        $(el).on('mouseover', function() {
+            if (!$(el).find('.sub-cat-menu').hasClass('loaded')) {
+                $.post('https://demo.activeitzone.com/ecommerce/category/nav-element-list', {
+                    _token: AIZ.data.csrf,
+                    id: $(el).data('id')
+                }, function(data) {
+                    $(el).find('.sub-cat-menu').addClass('loaded').html(data);
+                });
+            }
+        });
+    });
+    if ($('#lang-change').length > 0) {
+        $('#lang-change .dropdown-menu a').each(function() {
+            $(this).on('click', function(e) {
+                e.preventDefault();
+                var $this = $(this);
+                var locale = $this.data('flag');
+                $.post('https://demo.activeitzone.com/ecommerce/language', {
+                    _token: AIZ.data.csrf,
+                    locale: locale
+                }, function(data) {
+                    location.reload();
+                });
+
+            });
+        });
+    }
+
+    if ($('#currency-change').length > 0) {
+        $('#currency-change .dropdown-menu a').each(function() {
+            $(this).on('click', function(e) {
+                e.preventDefault();
+                var $this = $(this);
+                var currency_code = $this.data('currency');
+                $.post('https://demo.activeitzone.com/ecommerce/currency', {
+                    _token: AIZ.data.csrf,
+                    currency_code: currency_code
+                }, function(data) {
+                    location.reload();
+                });
+
+            });
+        });
+    }
+});
+
+$('#search').on('keyup', function() {
+    search();
+});
+
+$('#search').on('focus', function() {
+    search();
+});
+
+function search() {
+    var searchKey = $('#search').val();
+    if (searchKey.length > 0) {
+        $('body').addClass("typed-search-box-shown");
+
+        $('.typed-search-box').removeClass('d-none');
+        $('.search-preloader').removeClass('d-none');
+        $.post('https://demo.activeitzone.com/ecommerce/ajax-search', {
+            _token: AIZ.data.csrf,
+            search: searchKey
+        }, function(data) {
+            if (data == '0') {
+                // $('.typed-search-box').addClass('d-none');
+                $('#search-content').html(null);
+                $('.typed-search-box .search-nothing').removeClass('d-none').html(
+                    'Sorry, nothing found for <strong>"' + searchKey + '"</strong>');
+                $('.search-preloader').addClass('d-none');
+
+            } else {
+                $('.typed-search-box .search-nothing').addClass('d-none').html(null);
+                $('#search-content').html(data);
+                $('.search-preloader').addClass('d-none');
+            }
+        });
+    } else {
+        $('.typed-search-box').addClass('d-none');
+        $('body').removeClass("typed-search-box-shown");
+    }
+}
+
+function updateNavCart(view, count) {
+    $('.cart-count').html(count);
+    $('#cart_items').html(view);
+}
+
+function removeFromCart(key) {
+    $.post('https://demo.activeitzone.com/ecommerce/cart/removeFromCart', {
+        _token: AIZ.data.csrf,
+        id: key
+    }, function(data) {
+        updateNavCart(data.nav_cart_view, data.cart_count);
+        $('#cart-summary').html(data.cart_view);
+        AIZ.plugins.notify('success', "Item has been removed from cart");
+        $('#cart_items_sidenav').html(parseInt($('#cart_items_sidenav').html()) - 1);
+    });
+}
+
+function addToCompare(id) {
+    $.post('https://demo.activeitzone.com/ecommerce/compare/addToCompare', {
+        _token: AIZ.data.csrf,
+        id: id
+    }, function(data) {
+        $('#compare').html(data);
+        AIZ.plugins.notify('success', "Item has been added to compare list");
+        $('#compare_items_sidenav').html(parseInt($('#compare_items_sidenav').html()) + 1);
+    });
+}
+
+function addToWishList(id) {
+    AIZ.plugins.notify('warning', "Please login first");
+}
+
+function showAddToCartModal(id) {
+    if (!$('#modal-size').hasClass('modal-lg')) {
+        $('#modal-size').addClass('modal-lg');
+    }
+    $('#addToCart-modal-body').html(null);
+    $('#addToCart').modal();
+    $('.c-preloader').show();
+    $.post('https://demo.activeitzone.com/ecommerce/cart/show-cart-modal', {
+        _token: AIZ.data.csrf,
+        id: id
+    }, function(data) {
+        $('.c-preloader').hide();
+        $('#addToCart-modal-body').html(data);
+        AIZ.plugins.slickCarousel();
+        AIZ.plugins.zoom();
+        AIZ.extra.plusMinus();
+        getVariantPrice();
+    });
+}
+
+$('#option-choice-form input').on('change', function() {
+    getVariantPrice();
+});
+
+function getVariantPrice() {
+    if ($('#option-choice-form input[name=quantity]').val() > 0 && checkAddToCartValidity()) {
+        $.ajax({
+            type: "POST",
+            url: 'https://demo.activeitzone.com/ecommerce/product/variant_price',
+            data: $('#option-choice-form').serializeArray(),
+            success: function(data) {
+
+                $('.product-gallery-thumb .carousel-box').each(function(i) {
+                    if ($(this).data('variation') && data.variation == $(this).data('variation')) {
+                        $('.product-gallery-thumb').slick('slickGoTo', i);
+                    }
+                })
+
+                $('#option-choice-form #chosen_price_div').removeClass('d-none');
+                $('#option-choice-form #chosen_price_div #chosen_price').html(data.price);
+                $('#available-quantity').html(data.quantity);
+                $('.input-number').prop('max', data.max_limit);
+                if (parseInt(data.in_stock) == 0 && data.digital == 0) {
+                    $('.buy-now').addClass('d-none');
+                    $('.add-to-cart').addClass('d-none');
+                    $('.out-of-stock').removeClass('d-none');
+                } else {
+                    $('.buy-now').removeClass('d-none');
+                    $('.add-to-cart').removeClass('d-none');
+                    $('.out-of-stock').addClass('d-none');
+                }
+
+                AIZ.extra.plusMinus();
+            }
+        });
+    }
+}
+
+function checkAddToCartValidity() {
+    var names = {};
+    $('#option-choice-form input:radio').each(function() { // find unique names
+        names[$(this).attr('name')] = true;
+    });
+    var count = 0;
+    $.each(names, function() { // then count them
+        count++;
+    });
+
+    if ($('#option-choice-form input:radio:checked').length == count) {
+        return true;
+    }
+
+    return false;
+}
+
+function addToCart() {
+
+    if (checkAddToCartValidity()) {
+        $('#addToCart').modal();
+        $('.c-preloader').show();
+        $.ajax({
+            type: "POST",
+            url: 'https://demo.activeitzone.com/ecommerce/cart/addtocart',
+            data: $('#option-choice-form').serializeArray(),
+            success: function(data) {
+
+                $('#addToCart-modal-body').html(null);
+                $('.c-preloader').hide();
+                $('#modal-size').removeClass('modal-lg');
+                $('#addToCart-modal-body').html(data.modal_view);
+                AIZ.extra.plusMinus();
+                AIZ.plugins.slickCarousel();
+                updateNavCart(data.nav_cart_view, data.cart_count);
+            }
+        });
+    } else {
+        AIZ.plugins.notify('warning', "Please choose all the options");
+    }
+}
+
+function buyNow() {
+
+    if (checkAddToCartValidity()) {
+        $('#addToCart-modal-body').html(null);
+        $('#addToCart').modal();
+        $('.c-preloader').show();
+        $.ajax({
+            type: "POST",
+            url: 'https://demo.activeitzone.com/ecommerce/cart/addtocart',
+            data: $('#option-choice-form').serializeArray(),
+            success: function(data) {
+                if (data.status == 1) {
+
+                    $('#addToCart-modal-body').html(data.modal_view);
+                    updateNavCart(data.nav_cart_view, data.cart_count);
+
+                    window.location.replace("https://demo.activeitzone.com/ecommerce/cart");
+                } else {
+                    $('#addToCart-modal-body').html(null);
+                    $('.c-preloader').hide();
+                    $('#modal-size').removeClass('modal-lg');
+                    $('#addToCart-modal-body').html(data.modal_view);
+                }
+            }
+        });
+    } else {
+        AIZ.plugins.notify('warning', "Please choose all the options");
+    }
+}
+</script>
+
+<script>
+$(document).ready(function() {
+    $.post('https://demo.activeitzone.com/ecommerce/home/section/featured', {
+        _token: 'MPNOxhKWDlwXbwvlaxaCKA3w6iDgTbzblR0MCZTn'
+    }, function(data) {
+        $('#section_featured').html(data);
+        AIZ.plugins.slickCarousel();
+    });
+    $.post('https://demo.activeitzone.com/ecommerce/home/section/best_selling', {
+        _token: 'MPNOxhKWDlwXbwvlaxaCKA3w6iDgTbzblR0MCZTn'
+    }, function(data) {
+        $('#section_best_selling').html(data);
+        AIZ.plugins.slickCarousel();
+    });
+    $.post('https://demo.activeitzone.com/ecommerce/home/section/auction_products', {
+        _token: 'MPNOxhKWDlwXbwvlaxaCKA3w6iDgTbzblR0MCZTn'
+    }, function(data) {
+        $('#auction_products').html(data);
+        AIZ.plugins.slickCarousel();
+    });
+    $.post('https://demo.activeitzone.com/ecommerce/home/section/home_categories', {
+        _token: 'MPNOxhKWDlwXbwvlaxaCKA3w6iDgTbzblR0MCZTn'
+    }, function(data) {
+        $('#section_home_categories').html(data);
+        AIZ.plugins.slickCarousel();
+    });
+    $.post('https://demo.activeitzone.com/ecommerce/home/section/best_sellers', {
+        _token: 'MPNOxhKWDlwXbwvlaxaCKA3w6iDgTbzblR0MCZTn'
+    }, function(data) {
+        $('#section_best_sellers').html(data);
+        AIZ.plugins.slickCarousel();
+    });
+});
+</script>
+
+
+<!-- Start WOWSlider.com HEAD section -->
+<script type="text/javascript" src="slider_data/engine1/jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+

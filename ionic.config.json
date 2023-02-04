@@ -1,0 +1,7 @@
+{
+  "name": "cranesmart",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
