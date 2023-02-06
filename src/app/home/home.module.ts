@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 // import { HeaderComponent } from '../header/header.component';
 import { HeaderPartComponent } from '../allComponents/header-part/header-part.component';
 import { MiddleNavigationComponent } from '../allComponents/middle-navigation/middle-navigation.component';
+import { FooterComponent } from '../allComponents/footer/footer.component';
 
 
 @NgModule({
@@ -17,6 +18,11 @@ import { MiddleNavigationComponent } from '../allComponents/middle-navigation/mi
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, HeaderPartComponent, MiddleNavigationComponent]
+  declarations: [
+    HomePage,
+    HeaderPartComponent,
+    MiddleNavigationComponent,
+    FooterComponent
+  ]
 })
 export class HomePageModule {}
