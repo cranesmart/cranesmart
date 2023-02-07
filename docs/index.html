@@ -1,15 +1,17 @@
 <!DOCTYPE html><html lang="en"><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <base href="/">
+    <base href="/">
 
-    <title>Active eCommerce | Demo of Active eCommerce CMS</title>
+    <title>Active eCommerce</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     <meta name="description" content="Demo of Active eCommerce CMS">
     <meta name="keywords" content="">
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
 
     <!-- Favicon -->
     <link rel="icon" href="public/uploads/all/4xnLnzEeu3dFKDGSBMlvLXPLGXFdHEkvqBSZREmO.png">
@@ -28,8 +30,10 @@
 
 
     <!-- Start WOWSlider.com HEAD section -->
-    <link rel="stylesheet" type="text/css" href="slider_data/engine1/style.css">
-    <script type="text/javascript" src="slider_data/engine1/jquery.js"></script>
+    <!-- Start WOWSlider.com HEAD section -->
+    <style>@-webkit-keyframes wsBasic{0%{left:-0%}12.5%{left:-0%}25%{left:-100%}37.5%{left:-100%}50%{left:-200%}62.5%{left:-200%}75%{left:-300%}87.5%{left:-300%}}</style><link rel="stylesheet" type="text/css" href="./assets/slider_data/engine1/style.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="./assets/slider_data/engine1/style.css"></noscript>
+    <!-- <script type="text/javascript" src="./assets/slider_data/engine1/jquery.js"></script> -->
+    <!-- End WOWSlider.com HEAD section -->
     <!-- End WOWSlider.com HEAD section -->
 
 
@@ -58,9 +62,9 @@
         .pac-container {
             z-index: 100000;
         }
-        .dropdown-menu
-        {
-            z-index:1021 !important;
+
+        .dropdown-menu {
+            z-index: 1021 !important;
         }
     </style>
 
@@ -104,28 +108,48 @@
                 height: 11em;
             }
         }
+
+        .aiz-category-menu .sub-cat-menu {
+  display: none;
+  position: absolute;
+  width: calc(100% - 25%);
+  left: calc(25% - 10px);
+  height: calc(100% + 20px);
+  overflow: hidden;
+    overflow-y: hidden;
+  top: 0;
+  z-index: 91 !important;
+  background-color: #fff;
+  overflow-y: auto;
+}
     </style>
+
 
 <style>:root{--ion-color-primary:#3880ff;--ion-color-primary-rgb:56, 128, 255;--ion-color-primary-contrast:#ffffff;--ion-color-primary-contrast-rgb:255, 255, 255;--ion-color-primary-shade:#3171e0;--ion-color-primary-tint:#4c8dff;--ion-color-secondary:#3dc2ff;--ion-color-secondary-rgb:61, 194, 255;--ion-color-secondary-contrast:#ffffff;--ion-color-secondary-contrast-rgb:255, 255, 255;--ion-color-secondary-shade:#36abe0;--ion-color-secondary-tint:#50c8ff;--ion-color-tertiary:#5260ff;--ion-color-tertiary-rgb:82, 96, 255;--ion-color-tertiary-contrast:#ffffff;--ion-color-tertiary-contrast-rgb:255, 255, 255;--ion-color-tertiary-shade:#4854e0;--ion-color-tertiary-tint:#6370ff;--ion-color-success:#2dd36f;--ion-color-success-rgb:45, 211, 111;--ion-color-success-contrast:#ffffff;--ion-color-success-contrast-rgb:255, 255, 255;--ion-color-success-shade:#28ba62;--ion-color-success-tint:#42d77d;--ion-color-warning:#ffc409;--ion-color-warning-rgb:255, 196, 9;--ion-color-warning-contrast:#000000;--ion-color-warning-contrast-rgb:0, 0, 0;--ion-color-warning-shade:#e0ac08;--ion-color-warning-tint:#ffca22;--ion-color-danger:#eb445a;--ion-color-danger-rgb:235, 68, 90;--ion-color-danger-contrast:#ffffff;--ion-color-danger-contrast-rgb:255, 255, 255;--ion-color-danger-shade:#cf3c4f;--ion-color-danger-tint:#ed576b;--ion-color-dark:#222428;--ion-color-dark-rgb:34, 36, 40;--ion-color-dark-contrast:#ffffff;--ion-color-dark-contrast-rgb:255, 255, 255;--ion-color-dark-shade:#1e2023;--ion-color-dark-tint:#383a3e;--ion-color-medium:#92949c;--ion-color-medium-rgb:146, 148, 156;--ion-color-medium-contrast:#ffffff;--ion-color-medium-contrast-rgb:255, 255, 255;--ion-color-medium-shade:#808289;--ion-color-medium-tint:#9d9fa6;--ion-color-light:#f4f5f8;--ion-color-light-rgb:244, 245, 248;--ion-color-light-contrast:#000000;--ion-color-light-contrast-rgb:0, 0, 0;--ion-color-light-shade:#d7d8da;--ion-color-light-tint:#f5f6f9}@media (prefers-color-scheme: dark){body{--ion-color-primary:#428cff;--ion-color-primary-rgb:66,140,255;--ion-color-primary-contrast:#ffffff;--ion-color-primary-contrast-rgb:255,255,255;--ion-color-primary-shade:#3a7be0;--ion-color-primary-tint:#5598ff;--ion-color-secondary:#50c8ff;--ion-color-secondary-rgb:80,200,255;--ion-color-secondary-contrast:#ffffff;--ion-color-secondary-contrast-rgb:255,255,255;--ion-color-secondary-shade:#46b0e0;--ion-color-secondary-tint:#62ceff;--ion-color-tertiary:#6a64ff;--ion-color-tertiary-rgb:106,100,255;--ion-color-tertiary-contrast:#ffffff;--ion-color-tertiary-contrast-rgb:255,255,255;--ion-color-tertiary-shade:#5d58e0;--ion-color-tertiary-tint:#7974ff;--ion-color-success:#2fdf75;--ion-color-success-rgb:47,223,117;--ion-color-success-contrast:#000000;--ion-color-success-contrast-rgb:0,0,0;--ion-color-success-shade:#29c467;--ion-color-success-tint:#44e283;--ion-color-warning:#ffd534;--ion-color-warning-rgb:255,213,52;--ion-color-warning-contrast:#000000;--ion-color-warning-contrast-rgb:0,0,0;--ion-color-warning-shade:#e0bb2e;--ion-color-warning-tint:#ffd948;--ion-color-danger:#ff4961;--ion-color-danger-rgb:255,73,97;--ion-color-danger-contrast:#ffffff;--ion-color-danger-contrast-rgb:255,255,255;--ion-color-danger-shade:#e04055;--ion-color-danger-tint:#ff5b71;--ion-color-dark:#f4f5f8;--ion-color-dark-rgb:244,245,248;--ion-color-dark-contrast:#000000;--ion-color-dark-contrast-rgb:0,0,0;--ion-color-dark-shade:#d7d8da;--ion-color-dark-tint:#f5f6f9;--ion-color-medium:#989aa2;--ion-color-medium-rgb:152,154,162;--ion-color-medium-contrast:#000000;--ion-color-medium-contrast-rgb:0,0,0;--ion-color-medium-shade:#86888f;--ion-color-medium-tint:#a2a4ab;--ion-color-light:#222428;--ion-color-light-rgb:34,36,40;--ion-color-light-contrast:#ffffff;--ion-color-light-contrast-rgb:255,255,255;--ion-color-light-shade:#1e2023;--ion-color-light-tint:#383a3e}}html{--ion-font-family:var(--ion-default-font)}body{background:var(--ion-background-color)}@supports (padding-top: 20px){html{--ion-safe-area-top:var(--ion-statusbar-padding)}}@supports (padding-top: constant(safe-area-inset-top)){html{--ion-safe-area-top:constant(safe-area-inset-top);--ion-safe-area-bottom:constant(safe-area-inset-bottom);--ion-safe-area-left:constant(safe-area-inset-left);--ion-safe-area-right:constant(safe-area-inset-right)}}@supports (padding-top: env(safe-area-inset-top)){html{--ion-safe-area-top:env(safe-area-inset-top);--ion-safe-area-bottom:env(safe-area-inset-bottom);--ion-safe-area-left:env(safe-area-inset-left);--ion-safe-area-right:env(safe-area-inset-right)}}strong{font-weight:700}img{max-width:100%}a,button,button span{touch-action:manipulation}button{padding:0;border:0;border-radius:0;font-family:inherit;font-style:inherit;font-variant:inherit;line-height:1;text-transform:none;cursor:pointer;-webkit-appearance:button}button::-moz-focus-inner{padding:0;border:0}*{box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}html{width:100%;height:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%}html:not(.hydrated) body{display:none}body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;margin:0;padding:0;position:fixed;width:100%;max-width:100%;height:100%;max-height:100%;transform:translateZ(0);text-rendering:optimizeLegibility;overflow:hidden;touch-action:manipulation;-webkit-user-drag:none;-ms-content-zooming:none;word-wrap:break-word;overscroll-behavior-y:none;-webkit-text-size-adjust:none;text-size-adjust:none}html{font-family:var(--ion-font-family)}a{background-color:transparent;color:var(--ion-color-primary, #3880ff)}h4{margin-top:16px;margin-bottom:10px;font-weight:500;line-height:1.2}h4{font-size:20px}</style><link rel="stylesheet" href="styles.bac947a5496135b1.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.bac947a5496135b1.css"></noscript></head>
 
 <body>
-  <app-root></app-root>
-  <app-header></app-header>
-<script src="runtime.b18e51618a64c896.js" type="module"></script><script src="polyfills.f946d3779880c5da.js" type="module"></script><script src="main.e2ccb279e6ccad4d.js" type="module"></script>
+    <app-root></app-root>
+    <app-header></app-header>
+<script src="runtime.f2156b7efc176785.js" type="module"></script><script src="polyfills.f946d3779880c5da.js" type="module"></script><script src="main.8c7a9ea039a5c393.js" type="module"></script>
 
 
 
+<script type="text/javascript" src="./assets/slider_data/engine1/jquery.js"></script>
+<script type="text/javascript" src="./assets/slider_data/engine1/wowslider.js"></script>
+<script type="text/javascript" src="./assets/slider_data/engine1/script.js"></script>
+
+<!-- SCRIPTS -->
 <script src="./assets/js/vendors.js"></script>
 <script src="./assets/js/aiz-core.js"></script>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
-function confirm_modal(delete_url) {
-    jQuery('#confirm-delete').modal('show', {
-        backdrop: 'static'
-    });
-    document.getElementById('delete_link').setAttribute('href', delete_url);
-}
+    function confirm_modal(delete_url) {
+        jQuery('#confirm-delete').modal('show', {
+            backdrop: 'static'
+        });
+        document.getElementById('delete_link').setAttribute('href', delete_url);
+    }
 </script>
 
 <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -150,12 +174,12 @@ function confirm_modal(delete_url) {
 </div>
 
 <script>
-function account_delete_confirm_modal(delete_url) {
-    jQuery('#account_delete_confirm').modal('show', {
-        backdrop: 'static'
-    });
-    document.getElementById('account_delete_link').setAttribute('href', delete_url);
-}
+    function account_delete_confirm_modal(delete_url) {
+        jQuery('#account_delete_confirm').modal('show', {
+            backdrop: 'static'
+        });
+        document.getElementById('account_delete_link').setAttribute('href', delete_url);
+    }
 </script>
 
 <div class="modal fade" id="account_delete_confirm" tabindex="-1" role="dialog" aria-labelledby="account_delete_confirmModalLabel" aria-hidden="true">
@@ -223,21 +247,21 @@ function account_delete_confirm_modal(delete_url) {
 
 
 <script type="text/javascript">
-window.fbAsyncInit = function() {
-    FB.init({
-        xfbml: true,
-        version: 'v3.3'
-    });
-};
+    window.fbAsyncInit = function () {
+        FB.init({
+            xfbml: true,
+            version: 'v3.3'
+        });
+    };
 
-(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 </script>
 <div id="fb-root"></div>
 <!-- Your customer chat code -->
@@ -248,293 +272,291 @@ window.fbAsyncInit = function() {
 </script>
 
 <script>
-$(document).ready(function() {
-    $('.category-nav-element').each(function(i, el) {
-        $(el).on('mouseover', function() {
-            if (!$(el).find('.sub-cat-menu').hasClass('loaded')) {
-                $.post('https://demo.activeitzone.com/ecommerce/category/nav-element-list', {
-                    _token: AIZ.data.csrf,
-                    id: $(el).data('id')
-                }, function(data) {
-                    $(el).find('.sub-cat-menu').addClass('loaded').html(data);
-                });
-            }
-        });
-    });
-    if ($('#lang-change').length > 0) {
-        $('#lang-change .dropdown-menu a').each(function() {
-            $(this).on('click', function(e) {
-                e.preventDefault();
-                var $this = $(this);
-                var locale = $this.data('flag');
-                $.post('https://demo.activeitzone.com/ecommerce/language', {
-                    _token: AIZ.data.csrf,
-                    locale: locale
-                }, function(data) {
-                    location.reload();
-                });
-
-            });
-        });
-    }
-
-    if ($('#currency-change').length > 0) {
-        $('#currency-change .dropdown-menu a').each(function() {
-            $(this).on('click', function(e) {
-                e.preventDefault();
-                var $this = $(this);
-                var currency_code = $this.data('currency');
-                $.post('https://demo.activeitzone.com/ecommerce/currency', {
-                    _token: AIZ.data.csrf,
-                    currency_code: currency_code
-                }, function(data) {
-                    location.reload();
-                });
-
-            });
-        });
-    }
-});
-
-$('#search').on('keyup', function() {
-    search();
-});
-
-$('#search').on('focus', function() {
-    search();
-});
-
-function search() {
-    var searchKey = $('#search').val();
-    if (searchKey.length > 0) {
-        $('body').addClass("typed-search-box-shown");
-
-        $('.typed-search-box').removeClass('d-none');
-        $('.search-preloader').removeClass('d-none');
-        $.post('https://demo.activeitzone.com/ecommerce/ajax-search', {
-            _token: AIZ.data.csrf,
-            search: searchKey
-        }, function(data) {
-            if (data == '0') {
-                // $('.typed-search-box').addClass('d-none');
-                $('#search-content').html(null);
-                $('.typed-search-box .search-nothing').removeClass('d-none').html(
-                    'Sorry, nothing found for <strong>"' + searchKey + '"</strong>');
-                $('.search-preloader').addClass('d-none');
-
-            } else {
-                $('.typed-search-box .search-nothing').addClass('d-none').html(null);
-                $('#search-content').html(data);
-                $('.search-preloader').addClass('d-none');
-            }
-        });
-    } else {
-        $('.typed-search-box').addClass('d-none');
-        $('body').removeClass("typed-search-box-shown");
-    }
-}
-
-function updateNavCart(view, count) {
-    $('.cart-count').html(count);
-    $('#cart_items').html(view);
-}
-
-function removeFromCart(key) {
-    $.post('https://demo.activeitzone.com/ecommerce/cart/removeFromCart', {
-        _token: AIZ.data.csrf,
-        id: key
-    }, function(data) {
-        updateNavCart(data.nav_cart_view, data.cart_count);
-        $('#cart-summary').html(data.cart_view);
-        AIZ.plugins.notify('success', "Item has been removed from cart");
-        $('#cart_items_sidenav').html(parseInt($('#cart_items_sidenav').html()) - 1);
-    });
-}
-
-function addToCompare(id) {
-    $.post('https://demo.activeitzone.com/ecommerce/compare/addToCompare', {
-        _token: AIZ.data.csrf,
-        id: id
-    }, function(data) {
-        $('#compare').html(data);
-        AIZ.plugins.notify('success', "Item has been added to compare list");
-        $('#compare_items_sidenav').html(parseInt($('#compare_items_sidenav').html()) + 1);
-    });
-}
-
-function addToWishList(id) {
-    AIZ.plugins.notify('warning', "Please login first");
-}
-
-function showAddToCartModal(id) {
-    if (!$('#modal-size').hasClass('modal-lg')) {
-        $('#modal-size').addClass('modal-lg');
-    }
-    $('#addToCart-modal-body').html(null);
-    $('#addToCart').modal();
-    $('.c-preloader').show();
-    $.post('https://demo.activeitzone.com/ecommerce/cart/show-cart-modal', {
-        _token: AIZ.data.csrf,
-        id: id
-    }, function(data) {
-        $('.c-preloader').hide();
-        $('#addToCart-modal-body').html(data);
-        AIZ.plugins.slickCarousel();
-        AIZ.plugins.zoom();
-        AIZ.extra.plusMinus();
-        getVariantPrice();
-    });
-}
-
-$('#option-choice-form input').on('change', function() {
-    getVariantPrice();
-});
-
-function getVariantPrice() {
-    if ($('#option-choice-form input[name=quantity]').val() > 0 && checkAddToCartValidity()) {
-        $.ajax({
-            type: "POST",
-            url: 'https://demo.activeitzone.com/ecommerce/product/variant_price',
-            data: $('#option-choice-form').serializeArray(),
-            success: function(data) {
-
-                $('.product-gallery-thumb .carousel-box').each(function(i) {
-                    if ($(this).data('variation') && data.variation == $(this).data('variation')) {
-                        $('.product-gallery-thumb').slick('slickGoTo', i);
-                    }
-                })
-
-                $('#option-choice-form #chosen_price_div').removeClass('d-none');
-                $('#option-choice-form #chosen_price_div #chosen_price').html(data.price);
-                $('#available-quantity').html(data.quantity);
-                $('.input-number').prop('max', data.max_limit);
-                if (parseInt(data.in_stock) == 0 && data.digital == 0) {
-                    $('.buy-now').addClass('d-none');
-                    $('.add-to-cart').addClass('d-none');
-                    $('.out-of-stock').removeClass('d-none');
-                } else {
-                    $('.buy-now').removeClass('d-none');
-                    $('.add-to-cart').removeClass('d-none');
-                    $('.out-of-stock').addClass('d-none');
+    $(document).ready(function () {
+        $('.category-nav-element').each(function (i, el) {
+            $(el).on('mouseover', function () {
+                if (!$(el).find('.sub-cat-menu').hasClass('loaded')) {
+                    $.post('https://demo.activeitzone.com/ecommerce/category/nav-element-list', {
+                        _token: AIZ.data.csrf,
+                        id: $(el).data('id')
+                    }, function (data) {
+                        $(el).find('.sub-cat-menu').addClass('loaded').html(data);
+                    });
                 }
+            });
+        });
+        if ($('#lang-change').length > 0) {
+            $('#lang-change .dropdown-menu a').each(function () {
+                $(this).on('click', function (e) {
+                    e.preventDefault();
+                    var $this = $(this);
+                    var locale = $this.data('flag');
+                    $.post('https://demo.activeitzone.com/ecommerce/language', {
+                        _token: AIZ.data.csrf,
+                        locale: locale
+                    }, function (data) {
+                        location.reload();
+                    });
 
-                AIZ.extra.plusMinus();
-            }
+                });
+            });
+        }
+
+        if ($('#currency-change').length > 0) {
+            $('#currency-change .dropdown-menu a').each(function () {
+                $(this).on('click', function (e) {
+                    e.preventDefault();
+                    var $this = $(this);
+                    var currency_code = $this.data('currency');
+                    $.post('https://demo.activeitzone.com/ecommerce/currency', {
+                        _token: AIZ.data.csrf,
+                        currency_code: currency_code
+                    }, function (data) {
+                        location.reload();
+                    });
+
+                });
+            });
+        }
+    });
+
+    $('#search').on('keyup', function () {
+        search();
+    });
+
+    $('#search').on('focus', function () {
+        search();
+    });
+
+    function search() {
+        var searchKey = $('#search').val();
+        if (searchKey.length > 0) {
+            $('body').addClass("typed-search-box-shown");
+
+            $('.typed-search-box').removeClass('d-none');
+            $('.search-preloader').removeClass('d-none');
+            $.post('https://demo.activeitzone.com/ecommerce/ajax-search', {
+                _token: AIZ.data.csrf,
+                search: searchKey
+            }, function (data) {
+                if (data == '0') {
+                    // $('.typed-search-box').addClass('d-none');
+                    $('#search-content').html(null);
+                    $('.typed-search-box .search-nothing').removeClass('d-none').html(
+                        'Sorry, nothing found for <strong>"' + searchKey + '"</strong>');
+                    $('.search-preloader').addClass('d-none');
+
+                } else {
+                    $('.typed-search-box .search-nothing').addClass('d-none').html(null);
+                    $('#search-content').html(data);
+                    $('.search-preloader').addClass('d-none');
+                }
+            });
+        } else {
+            $('.typed-search-box').addClass('d-none');
+            $('body').removeClass("typed-search-box-shown");
+        }
+    }
+
+    function updateNavCart(view, count) {
+        $('.cart-count').html(count);
+        $('#cart_items').html(view);
+    }
+
+    function removeFromCart(key) {
+        $.post('https://demo.activeitzone.com/ecommerce/cart/removeFromCart', {
+            _token: AIZ.data.csrf,
+            id: key
+        }, function (data) {
+            updateNavCart(data.nav_cart_view, data.cart_count);
+            $('#cart-summary').html(data.cart_view);
+            AIZ.plugins.notify('success', "Item has been removed from cart");
+            $('#cart_items_sidenav').html(parseInt($('#cart_items_sidenav').html()) - 1);
         });
     }
-}
 
-function checkAddToCartValidity() {
-    var names = {};
-    $('#option-choice-form input:radio').each(function() { // find unique names
-        names[$(this).attr('name')] = true;
-    });
-    var count = 0;
-    $.each(names, function() { // then count them
-        count++;
-    });
-
-    if ($('#option-choice-form input:radio:checked').length == count) {
-        return true;
-    }
-
-    return false;
-}
-
-function addToCart() {
-
-    if (checkAddToCartValidity()) {
-        $('#addToCart').modal();
-        $('.c-preloader').show();
-        $.ajax({
-            type: "POST",
-            url: 'https://demo.activeitzone.com/ecommerce/cart/addtocart',
-            data: $('#option-choice-form').serializeArray(),
-            success: function(data) {
-
-                $('#addToCart-modal-body').html(null);
-                $('.c-preloader').hide();
-                $('#modal-size').removeClass('modal-lg');
-                $('#addToCart-modal-body').html(data.modal_view);
-                AIZ.extra.plusMinus();
-                AIZ.plugins.slickCarousel();
-                updateNavCart(data.nav_cart_view, data.cart_count);
-            }
+    function addToCompare(id) {
+        $.post('https://demo.activeitzone.com/ecommerce/compare/addToCompare', {
+            _token: AIZ.data.csrf,
+            id: id
+        }, function (data) {
+            $('#compare').html(data);
+            AIZ.plugins.notify('success', "Item has been added to compare list");
+            $('#compare_items_sidenav').html(parseInt($('#compare_items_sidenav').html()) + 1);
         });
-    } else {
-        AIZ.plugins.notify('warning', "Please choose all the options");
     }
-}
 
-function buyNow() {
+    function addToWishList(id) {
+        AIZ.plugins.notify('warning', "Please login first");
+    }
 
-    if (checkAddToCartValidity()) {
+    function showAddToCartModal(id) {
+        if (!$('#modal-size').hasClass('modal-lg')) {
+            $('#modal-size').addClass('modal-lg');
+        }
         $('#addToCart-modal-body').html(null);
         $('#addToCart').modal();
         $('.c-preloader').show();
-        $.ajax({
-            type: "POST",
-            url: 'https://demo.activeitzone.com/ecommerce/cart/addtocart',
-            data: $('#option-choice-form').serializeArray(),
-            success: function(data) {
-                if (data.status == 1) {
+        $.post('https://demo.activeitzone.com/ecommerce/cart/show-cart-modal', {
+            _token: AIZ.data.csrf,
+            id: id
+        }, function (data) {
+            $('.c-preloader').hide();
+            $('#addToCart-modal-body').html(data);
+            AIZ.plugins.slickCarousel();
+            AIZ.plugins.zoom();
+            AIZ.extra.plusMinus();
+            getVariantPrice();
+        });
+    }
 
-                    $('#addToCart-modal-body').html(data.modal_view);
-                    updateNavCart(data.nav_cart_view, data.cart_count);
+    $('#option-choice-form input').on('change', function () {
+        getVariantPrice();
+    });
 
-                    window.location.replace("https://demo.activeitzone.com/ecommerce/cart");
-                } else {
+    function getVariantPrice() {
+        if ($('#option-choice-form input[name=quantity]').val() > 0 && checkAddToCartValidity()) {
+            $.ajax({
+                type: "POST",
+                url: 'https://demo.activeitzone.com/ecommerce/product/variant_price',
+                data: $('#option-choice-form').serializeArray(),
+                success: function (data) {
+
+                    $('.product-gallery-thumb .carousel-box').each(function (i) {
+                        if ($(this).data('variation') && data.variation == $(this).data('variation')) {
+                            $('.product-gallery-thumb').slick('slickGoTo', i);
+                        }
+                    })
+
+                    $('#option-choice-form #chosen_price_div').removeClass('d-none');
+                    $('#option-choice-form #chosen_price_div #chosen_price').html(data.price);
+                    $('#available-quantity').html(data.quantity);
+                    $('.input-number').prop('max', data.max_limit);
+                    if (parseInt(data.in_stock) == 0 && data.digital == 0) {
+                        $('.buy-now').addClass('d-none');
+                        $('.add-to-cart').addClass('d-none');
+                        $('.out-of-stock').removeClass('d-none');
+                    } else {
+                        $('.buy-now').removeClass('d-none');
+                        $('.add-to-cart').removeClass('d-none');
+                        $('.out-of-stock').addClass('d-none');
+                    }
+
+                    AIZ.extra.plusMinus();
+                }
+            });
+        }
+    }
+
+    function checkAddToCartValidity() {
+        var names = {};
+        $('#option-choice-form input:radio').each(function () { // find unique names
+            names[$(this).attr('name')] = true;
+        });
+        var count = 0;
+        $.each(names, function () { // then count them
+            count++;
+        });
+
+        if ($('#option-choice-form input:radio:checked').length == count) {
+            return true;
+        }
+
+        return false;
+    }
+
+    function addToCart() {
+
+        if (checkAddToCartValidity()) {
+            $('#addToCart').modal();
+            $('.c-preloader').show();
+            $.ajax({
+                type: "POST",
+                url: 'https://demo.activeitzone.com/ecommerce/cart/addtocart',
+                data: $('#option-choice-form').serializeArray(),
+                success: function (data) {
+
                     $('#addToCart-modal-body').html(null);
                     $('.c-preloader').hide();
                     $('#modal-size').removeClass('modal-lg');
                     $('#addToCart-modal-body').html(data.modal_view);
+                    AIZ.extra.plusMinus();
+                    AIZ.plugins.slickCarousel();
+                    updateNavCart(data.nav_cart_view, data.cart_count);
                 }
-            }
-        });
-    } else {
-        AIZ.plugins.notify('warning', "Please choose all the options");
+            });
+        } else {
+            AIZ.plugins.notify('warning', "Please choose all the options");
+        }
     }
-}
+
+    function buyNow() {
+
+        if (checkAddToCartValidity()) {
+            $('#addToCart-modal-body').html(null);
+            $('#addToCart').modal();
+            $('.c-preloader').show();
+            $.ajax({
+                type: "POST",
+                url: 'https://demo.activeitzone.com/ecommerce/cart/addtocart',
+                data: $('#option-choice-form').serializeArray(),
+                success: function (data) {
+                    if (data.status == 1) {
+
+                        $('#addToCart-modal-body').html(data.modal_view);
+                        updateNavCart(data.nav_cart_view, data.cart_count);
+
+                        window.location.replace("https://demo.activeitzone.com/ecommerce/cart");
+                    } else {
+                        $('#addToCart-modal-body').html(null);
+                        $('.c-preloader').hide();
+                        $('#modal-size').removeClass('modal-lg');
+                        $('#addToCart-modal-body').html(data.modal_view);
+                    }
+                }
+            });
+        } else {
+            AIZ.plugins.notify('warning', "Please choose all the options");
+        }
+    }
 </script>
 
 <script>
-$(document).ready(function() {
-    $.post('https://demo.activeitzone.com/ecommerce/home/section/featured', {
-        _token: 'MPNOxhKWDlwXbwvlaxaCKA3w6iDgTbzblR0MCZTn'
-    }, function(data) {
-        $('#section_featured').html(data);
-        AIZ.plugins.slickCarousel();
+    $(document).ready(function () {
+        $.post('https://demo.activeitzone.com/ecommerce/home/section/featured', {
+            _token: 'MPNOxhKWDlwXbwvlaxaCKA3w6iDgTbzblR0MCZTn'
+        }, function (data) {
+            $('#section_featured').html(data);
+            AIZ.plugins.slickCarousel();
+        });
+        $.post('https://demo.activeitzone.com/ecommerce/home/section/best_selling', {
+            _token: 'MPNOxhKWDlwXbwvlaxaCKA3w6iDgTbzblR0MCZTn'
+        }, function (data) {
+            $('#section_best_selling').html(data);
+            AIZ.plugins.slickCarousel();
+        });
+        $.post('https://demo.activeitzone.com/ecommerce/home/section/auction_products', {
+            _token: 'MPNOxhKWDlwXbwvlaxaCKA3w6iDgTbzblR0MCZTn'
+        }, function (data) {
+            $('#auction_products').html(data);
+            AIZ.plugins.slickCarousel();
+        });
+        $.post('https://demo.activeitzone.com/ecommerce/home/section/home_categories', {
+            _token: 'MPNOxhKWDlwXbwvlaxaCKA3w6iDgTbzblR0MCZTn'
+        }, function (data) {
+            $('#section_home_categories').html(data);
+            AIZ.plugins.slickCarousel();
+        });
+        $.post('https://demo.activeitzone.com/ecommerce/home/section/best_sellers', {
+            _token: 'MPNOxhKWDlwXbwvlaxaCKA3w6iDgTbzblR0MCZTn'
+        }, function (data) {
+            $('#section_best_sellers').html(data);
+            AIZ.plugins.slickCarousel();
+        });
     });
-    $.post('https://demo.activeitzone.com/ecommerce/home/section/best_selling', {
-        _token: 'MPNOxhKWDlwXbwvlaxaCKA3w6iDgTbzblR0MCZTn'
-    }, function(data) {
-        $('#section_best_selling').html(data);
-        AIZ.plugins.slickCarousel();
-    });
-    $.post('https://demo.activeitzone.com/ecommerce/home/section/auction_products', {
-        _token: 'MPNOxhKWDlwXbwvlaxaCKA3w6iDgTbzblR0MCZTn'
-    }, function(data) {
-        $('#auction_products').html(data);
-        AIZ.plugins.slickCarousel();
-    });
-    $.post('https://demo.activeitzone.com/ecommerce/home/section/home_categories', {
-        _token: 'MPNOxhKWDlwXbwvlaxaCKA3w6iDgTbzblR0MCZTn'
-    }, function(data) {
-        $('#section_home_categories').html(data);
-        AIZ.plugins.slickCarousel();
-    });
-    $.post('https://demo.activeitzone.com/ecommerce/home/section/best_sellers', {
-        _token: 'MPNOxhKWDlwXbwvlaxaCKA3w6iDgTbzblR0MCZTn'
-    }, function(data) {
-        $('#section_best_sellers').html(data);
-        AIZ.plugins.slickCarousel();
-    });
-});
 </script>
 
 
 <!-- Start WOWSlider.com HEAD section -->
-<script type="text/javascript" src="slider_data/engine1/jquery.js"></script>
-<!-- End WOWSlider.com HEAD section -->
-
-</body></html><!-- SCRIPTS -->
+<script type="text/javascript" src="./assets/slider_data/engine1/jquery.js"></script>
+<!-- End WOWSlider.com HEAD section --></body></html>
