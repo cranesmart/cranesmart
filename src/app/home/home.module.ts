@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 // import { HeaderComponent } from '../header/header.component';
 import { HeaderPartComponent } from '../allComponents/header-part/header-part.component';
 import { MiddleNavigationComponent } from '../allComponents/middle-navigation/middle-navigation.component';
+import { MainContentPageComponent } from '../allComponents/main-content-page/main-content-page.component';
 import { FooterComponent } from '../allComponents/footer/footer.component';
 
 
@@ -22,6 +23,7 @@ import { FooterComponent } from '../allComponents/footer/footer.component';
     HomePage,
     HeaderPartComponent,
     MiddleNavigationComponent,
+    MainContentPageComponent,
     FooterComponent
   ]
 })
